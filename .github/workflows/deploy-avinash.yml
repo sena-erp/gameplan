@@ -16,9 +16,8 @@ jobs:
     runs-on:
       - self-hosted
       - avinash
-      - gameplan
     timeout-minutes: 30
 
     steps:
       - name: Deploy
-        run: /home/arvis/avinash-industries/bench/apps/gameplan/scripts/deploy-avinash.sh
+        run: /home/arvis/avinash-industries/bench/scripts/deploy-app-to-avinash.sh gameplan main
