@@ -1,0 +1,24 @@
+name: Deploy Avinash
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-avinash
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy Gameplan to Avinash bench
+    runs-on:
+      - self-hosted
+      - avinash
+      - gameplan
+    timeout-minutes: 30
+
+    steps:
+      - name: Deploy
+        run: /home/arvis/avinash-industries/bench/apps/gameplan/scripts/deploy-avinash.sh
